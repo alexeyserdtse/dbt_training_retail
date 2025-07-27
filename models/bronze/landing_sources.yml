@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: landing
+    config:
+      enabled: true
+    database: dbt_retail
+    tables:
+      - name: orders
+      - name: products
+      - name: reviews
+      - name: users
