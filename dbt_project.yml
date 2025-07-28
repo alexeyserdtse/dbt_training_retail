@@ -37,7 +37,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   snowflake_retail_project:
-    +materialized: table
-    +transient: false
     +copy_grants: true
-
+    Retail:
+      bronze:
+        +materialized: table
+        +transient: true
+        +schema: bronze
+      silver:
+        +materialized: table
+        +transient: false
+        +schema: silver
+      gold:
+        +materialized: view
+        +schema: gold
