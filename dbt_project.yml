@@ -36,6 +36,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  +materialized: table
-  +copy_grants: true
+  snowflake_retail_project:
+    +materialized: table
+    +transient: false
+    +copy_grants: true
 
